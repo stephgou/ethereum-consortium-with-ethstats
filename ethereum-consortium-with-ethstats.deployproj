@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>b4dce66f-a0a9-4287-856f-bf55da505fea</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworkIdentifier>Deployment</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>1.0</TargetFrameworkVersion>
+    <PrepareForBuildDependsOn>
+    </PrepareForBuildDependsOn>
+  </PropertyGroup>
+  <Import Condition=" Exists('Deployment.targets') " Project="Deployment.targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <!-- vertag<:>start tokens<:>maj.min -->
+  <Import Condition=" Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets') " Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets" />
+  <!-- vertag<:>end -->
+  <ItemGroup>
+    <None Include="Deployment.targets">
+      <Visible>False</Visible>
+    </None>
+    <Content Include="Deploy-AzureResourceGroup.ps1" />
+    <Content Include="azuredeploy.json" />
+    <Content Include="azuredeploy.parameters.json" />
+    <None Include="genesis-template.json" />
+    <None Include="images\admin-site.png" />
+    <None Include="images\azure1.png" />
+    <None Include="images\azure10.png" />
+    <None Include="images\azure11.png" />
+    <None Include="images\azure12.png" />
+    <None Include="images\azure2.png" />
+    <None Include="images\azure3.png" />
+    <None Include="images\azure4.png" />
+    <None Include="images\azure5.png" />
+    <None Include="images\azure6.png" />
+    <None Include="images\azure7.png" />
+    <None Include="images\azure8.png" />
+    <None Include="images\azure9.png" />
+    <None Include="images\contracts1.png" />
+    <None Include="images\contracts10.png" />
+    <None Include="images\contracts11.png" />
+    <None Include="images\contracts12.png" />
+    <None Include="images\contracts2.png" />
+    <None Include="images\contracts3.png" />
+    <None Include="images\contracts4.png" />
+    <None Include="images\contracts5.png" />
+    <None Include="images\contracts6.png" />
+    <None Include="images\contracts7.png" />
+    <None Include="images\contracts8.png" />
+    <None Include="images\contracts9.png" />
+    <None Include="images\deployment.png" />
+    <None Include="images\eth-network.png" />
+    <None Include="images\output.png" />
+    <None Include="metadata.json" />
+    <None Include="nested\loadBalancer.json" />
+    <None Include="nested\mnVMAuth-password.json" />
+    <None Include="nested\mnVMAuth-sshPublicKey.json" />
+    <None Include="nested\txVMAuth-password.json" />
+    <None Include="nested\txVMAuth-sshPublicKey.json" />
+    <None Include="nested\vmExtension.json" />
+    <None Include="README.md" />
+    <None Include="scripts\configure-geth-azureuser.sh" />
+    <None Include="scripts\configure-geth.sh" />
+    <None Include="scripts\etheradmin\app.js" />
+    <None Include="scripts\etheradmin\etheradmin.handlebars" />
+    <None Include="scripts\etheradmin\etherstartup.handlebars" />
+    <None Include="scripts\etheradmin\main.handlebars" />
+    <None Include="scripts\etheradmin\npm-shrinkwrap.json" />
+    <None Include="scripts\etheradmin\package.json" />
+    <None Include="scripts\etheradmin\skeleton.css" />
+    <None Include="scripts\sample-contracts.sol" />
+    <None Include="scripts\start-private-blockchain.sh" />
+  </ItemGroup>
+  <Target Name="GetReferenceAssemblyPaths" />
+</Project>
