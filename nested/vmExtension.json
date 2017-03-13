@@ -82,7 +82,8 @@
         "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
-            "[concat(parameters('artifactsLocationURL'), '/scripts/configure-geth.sh')]"
+            "[concat(parameters('artifactsLocationURL'), '/scripts/configure-geth.sh')]",
+            "[concat(parameters('artifactsLocationURL'), '/scripts/configure-ethstats.sh')]"
           ]
         },
         "protectedSettings": {
