@@ -183,6 +183,44 @@ if [ $NODE_TYPE -eq 0 ]; then #TX node
   printf "%s\n" "TX_NODE_PREFIX=$TX_NODE_PREFIX" >> $GETH_CFG_FILE_PATH;
   printf "%s\n" "NUM_TX_NODES=$NUM_TX_NODES" >> $GETH_CFG_FILE_PATH;
   printf "%s\n" "ADMIN_SITE_PORT=$ADMIN_SITE_PORT" >> $GETH_CFG_FILE_PATH;
+
+
+
+  ## stephgou
+
+	ETHEREUM_STATS_FILE="configure-ethstats.sh"
+	ETHEREUM_NETSTATS_DIR="eth-netstats"
+	ETHEREUM_NETINTELLIGENCE_DIR="eth-net-intelligence-api"
+
+  	git clone https://github.com/cubedro/eth-netstats
+	cd "$ETHEREUM_NETSTATS_DIR"
+	npm install > /dev/null 2>&1
+	npm install -g grunt-cli > /dev/null 2>&1
+	grunt all > /dev/null 2>&1
+	#WS_SECRET="eth-net-stats-has-a-secret" npm start
+	cd ..
+
+	#https://ethereum.gitbooks.io/frontier-guide/content/netstats.html
+	git clone https://github.com/cubedro/eth-net-intelligence-api
+	cp "$HOMEDIR/$ETHEREUM_STATS_FILE" "$HOMEDIR/$ETHEREUM_NETINTELLIGENCE_DIR/$ETHEREUM_STATS_FILE" 
+	cd "$ETHEREUM_NETINTELLIGENCE_DIR"
+	npm install > /dev/null 2>&1
+	npm install -g pm2 > /dev/null 2>&1
+
+	#https://github.com/ethereum/go-ethereum/wiki/Setting-up-monitoring-on-local-cluster
+	#git clone https://github.com/ethersphere/eth-utils.git
+
+	len_vm_name=${#VMNAME}
+	len_minus_2=$((len_vm_name-2))
+	name_prefix="${VMNAME:0:$len_minus_2}"
+
+	bash "./../$ETHEREUM_STATS_FILE" "$NUM_MN_NODES" "$MN_NODE_PREFIX" "http://localhost:6000" "eth-net-stats-has-a-secret" > app.json
+
+	cd ..
+	#after udpate of the app.json
+	#pm2 start app.json
+  ##
+
 fi
 
 ##########################################

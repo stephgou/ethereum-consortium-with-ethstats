@@ -68,6 +68,7 @@
     <None Include="nested\txVMAuth-sshPublicKey.json" />
     <None Include="nested\vmExtension.json" />
     <None Include="README.md" />
+    <None Include="scripts\configure-ethstats.sh" />
     <None Include="scripts\configure-geth-azureuser.sh" />
     <None Include="scripts\configure-geth.sh" />
     <None Include="scripts\etheradmin\app.js" />
