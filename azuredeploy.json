@@ -174,7 +174,7 @@
     "apiVersionVirtualNetworks": "2016-09-01",
     "authType": "sshPublicKey",
     "storageAccountType": "Standard_LRS",
-    "namingInfix": "[toLower(substring(concat(parameters('namePrefix'), 'sg'), 0, 9))]",
+    "namingInfix": "[toLower(substring(concat(parameters('namePrefix'), '-sg'), 0, 9))]",
     "availabilitySetName": "[concat(variables('namingInfix'), 'AvSet')]",
     "httpPort": 80,
     "adminSitePort": 3000,

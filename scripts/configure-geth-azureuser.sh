@@ -184,9 +184,7 @@ if [ $NODE_TYPE -eq 0 ]; then #TX node
   printf "%s\n" "NUM_TX_NODES=$NUM_TX_NODES" >> $GETH_CFG_FILE_PATH;
   printf "%s\n" "ADMIN_SITE_PORT=$ADMIN_SITE_PORT" >> $GETH_CFG_FILE_PATH;
 
-
-
-  ## stephgou
+##begin_stephgou
 
 	ETHEREUM_STATS_FILE="configure-ethstats.sh"
 	ETHEREUM_NETSTATS_DIR="eth-netstats"
@@ -219,7 +217,8 @@ if [ $NODE_TYPE -eq 0 ]; then #TX node
 	cd ..
 	#after udpate of the app.json
 	#pm2 start app.json
-  ##
+
+##end_stephgou
 
 fi
 

@@ -22,6 +22,10 @@ cd "/home/$AZUREUSER";
 
 sudo -u $AZUREUSER /bin/bash -c "wget -N ${ARTIFACTS_URL_PREFIX}/scripts/configure-geth-azureuser.sh";
 
+##begin_stephgou
+sudo -u $AZUREUSER /bin/bash -c "wget -N ${ARTIFACTS_URL_PREFIX}/scripts/configure-ethstats.sh";
+##end_stephgou
+
 ##################################
 # Initiate loop for error checking
 ##################################

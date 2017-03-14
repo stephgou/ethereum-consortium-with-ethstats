@@ -164,7 +164,7 @@
   },
   "variables": {
     "location": "[resourceGroup().location]",
-    "artifactsLocationURL": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/ethereum-consortium-blockchain-network",
+    "artifactsLocationURL": "https://raw.githubusercontent.com/stephgou/ethereum-consortium-with-ethstats/master",
     "apiVersionDeployments": "2016-09-01",
     "apiVersionStorageAccounts": "2016-01-01",
     "apiVersionAvailabilitySets": "2016-03-30",
@@ -174,7 +174,7 @@
     "apiVersionVirtualNetworks": "2016-09-01",
     "authType": "sshPublicKey",
     "storageAccountType": "Standard_LRS",
-    "namingInfix": "[toLower(substring(concat(parameters('namePrefix'), uniqueString(resourceGroup().id)), 0, 9))]",
+    "namingInfix": "[toLower(substring(concat(parameters('namePrefix'), '-sg'), 0, 9))]",
     "availabilitySetName": "[concat(variables('namingInfix'), 'AvSet')]",
     "httpPort": 80,
     "adminSitePort": 3000,
